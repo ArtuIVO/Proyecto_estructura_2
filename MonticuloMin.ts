@@ -4,11 +4,13 @@ export class MonticuloMin {
     private heap: Venta[] = [];
 
     insertar(orden: Venta) {
+        console.log('Insertando en MontículoMin:', orden);
         this.heap.push(orden);
         this.subir(this.heap.length - 1);
     }
 
     extraerMinimo(): Venta | undefined {
+        console.log('Extrayendo mínimo en MontículoMin:', this.heap[0]);
         const min = this.heap[0];
         const fin = this.heap.pop();
         if (this.heap.length > 0 && fin) {

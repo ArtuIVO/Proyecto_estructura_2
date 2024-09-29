@@ -4,11 +4,13 @@ export class MonticuloMax {
     private heap: Compra[] = [];
 
     insertar(orden: Compra) {
+        console.log('Insertando en MontículoMax:', orden);
         this.heap.push(orden);
         this.subir(this.heap.length - 1);
     }
 
     extraerMaximo(): Compra | undefined {
+        console.log('Extrayendo máximo en MontículoMax:', this.heap[0]); 
         const max = this.heap[0];
         const fin = this.heap.pop();
         if (this.heap.length > 0 && fin) {

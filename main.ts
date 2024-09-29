@@ -8,5 +8,7 @@ simulador.agregarVenta(new Venta('Empresa A', 50, 45));
 simulador.agregarVenta(new Venta('Empresa A', 100, 55));
 simulador.agregarCompra(new Compra('Empresa B', 200, 60));
 
+simulador.procesarTransacciones();
+
 console.log('Historial de transacciones:');
 console.log(simulador.verHistorial());

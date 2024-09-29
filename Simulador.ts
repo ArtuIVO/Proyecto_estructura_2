@@ -9,19 +9,18 @@ export class Simulador {
 
     agregarCompra(compra: Compra) {
         this.compras.insertar(compra);
-        this.procesarTransacciones();
     }
 
     agregarVenta(venta: Venta) {
         this.ventas.insertar(venta);
-        this.procesarTransacciones();
     }
 
-    private procesarTransacciones() {
+    procesarTransacciones() {
         let compra = this.compras.extraerMaximo();
         let venta = this.ventas.extraerMinimo();
 
         while (compra && venta && compra.precio >= venta.precio) {
+            console.log('Procesando transacción entre:', compra, 'y', venta); 
             const cantidadTransaccion = Math.min(compra.cantidad, venta.cantidad);
             const precioTransaccion = (compra.precio + venta.precio) / 2;
 
