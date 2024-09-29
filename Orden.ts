@@ -3,7 +3,14 @@ export class Orden {
         public compania: string,
         public cantidad: number,
         public precio: number
-    ) {}
+    ) {
+        if (cantidad <= 0) {
+            throw new Error('La cantidad debe ser mayor que 0');
+        }
+        if (precio <= 0) {
+            throw new Error('El precio debe ser mayor que 0');
+        }
+}
 }
 
 export class Compra extends Orden {
