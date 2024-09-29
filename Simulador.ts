@@ -34,8 +34,10 @@ export class Simulador {
             compra.cantidad -= cantidadTransaccion;
             venta.cantidad -= cantidadTransaccion;
 
-            if (compra.cantidad > 0) this.compras.insertar(compra);
-            if (venta.cantidad > 0) this.ventas.insertar(venta);
+            if (compra.cantidad > 0) {
+                this.compras.insertar(compra);}
+            if (venta.cantidad > 0){
+                 this.ventas.insertar(venta);}
 
             compra = this.compras.extraerMaximo();
             venta = this.ventas.extraerMinimo();
